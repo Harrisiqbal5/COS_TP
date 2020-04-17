@@ -101,7 +101,7 @@ async function asyncCall()  {
       };
 
       asyncCall()
-      var minutes = 5, the_interval = minutes * 60 * 1000;
+      var minutes = 30, the_interval = minutes * 60 * 1000;
       setInterval(function() {
         asyncCall()
       }, the_interval);
