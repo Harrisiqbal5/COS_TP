@@ -106,4 +106,33 @@ async function asyncCall()  {
         asyncCall()
       }, the_interval);
 
+      function send_mail() {
+
+        const nodemailer = require('nodemailer');
+
+      let transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      requireTLS: true,
+      auth: {
+          user: 'abc@gmail.com', // like : abc@gmail.com
+          pass: 'pass@123'           // like : pass@123
+      }
+      });
+
+      let mailOptions = {
+      from: 'Harcostp4@gmail.com',
+      to: 'harrisiqbal64@gmail.com',
+      subject: 'There is TP!',
+      text: 'Go Now!!'
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error.message);
+        }
+      console.log('success');
+      }); 
+}
       
